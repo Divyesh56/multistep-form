@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Sidebar start -->
+  <div class="container"> 
+    <div class="sidebar">
+      
+      <ul>
+          <li class="sidebar-item active" data-target="1">
+              <div class="step-container">
+                  <span class="circle 1">1</span> 
+                  <div class="text-container">
+                      <span class="step">STEP 1</span>
+                      <br>
+                      <span class="info">YOUR INFO</span>
+                  </div>
+              </div>
+          </li>
+          <li class="sidebar-item active" data-target="2">
+              <div class="step-container">
+                  <span class="circle 2">2</span> 
+                  <div class="text-container">
+                      <span class="step">STEP 2</span>
+                      <br>
+                      <span class="info">SELECT PLANS</span>
+                  </div>
+              </div>
+          </li>
+          <li class="sidebar-item active" data-target="3">
+              <div class="step-container">
+                  <span class="circle 3">3</span> 
+                  <div class="text-container">
+                      <span class="step">STEP 3</span>
+                      <br>
+                      <span class="info">ADD-ONS</span>
+                  </div>
+              </div>
+          </li>
+          <li class="sidebar-item active " data-target="4">
+              <div class="step-container">
+                  <span class="circle 4">4</span> 
+                  <div class="text-container">
+                      <span class="step">STEP 4</span>
+                      <br>
+                      <span class="info">SUMMARY</span>
+                  </div>
+              </div>
+          </li>
+      </ul>
+  </div>
+  
+  
+  
+  
+   
+ 
+<div class="content" style="margin: 0; position: relative;">
+    <div class="detail-form" id="1-details">
+       
+  
+        <form id="personal-info-form">
+          <h1>Personal Info</h1>
+          <p>please provide your name email and phone number.</p>
+          <div class="form-group">
+            <label for="name">Name:  <span class="error-message" id="name-error"></span></label>
+            <input type="text" id="name" name="name" required placeholder="e.g. Stephen King">
+           
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email: <span class="error-message" id="email-error"></span> </label>
+            <input type="email" id="email" name="email" required  placeholder="e.g. stephenking@lorem.com">
+            
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone:  <span class="error-message" id="phone-error"></span></label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 1234567890" required>
+           
+          </div>
+
+          
+          <div class="sticky-bottom">
+          <input type="submit" class="next-btn" value="Next Step" id="Personal-form">
+        </div>
+        </form>
+      </div>
+    <div class="detail-form" id="2-details">
+      <div class="detail-form-style">
+        <h1>Select Your Plan</h1>
+        <p>you have the option of monthly or yearly billing.</p>
+  
+        <div class="plan-container">
+          <div class="plan-box" data-plan="Arcade" data-monthly="9" data-yearly="90">
+            <img src="./assets/images/icon-arcade.svg" alt="Monthly Plan Icon" width="40" height="40">
+            <div class="inner-style"> 
+            <div class="plan-name">Arcade</div>
+            <div class="plan-price">$9/mo</div>
+            
+            <p class="free-plan">2 months free</p>
+          </div>
+          </div>
+      
+          <div class="plan-box" data-plan="Advanced" data-monthly="12" data-yearly="120">
+            <img src="./assets/images/icon-advanced.svg" alt="Monthly Plan Icon" width="40" height="40">
+            <div class="inner-style">
+            <div class="plan-name">Advanced</div>
+            <div class="plan-price">$12/mo</div>
+            
+            <p class="free-plan">2 months   free</p>
+          </div>
+          </div>  
+      
+          <div class="plan-box" data-plan="Pro" data-monthly="15" data-yearly="150">
+            <img src="./assets/images/icon-pro.svg" alt="Monthly Plan Icon" width="40" height="40" >
+            <div class="inner-style">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">$15/mo</div>
+            
+            <p class="free-plan">2 months free</p>
+          </div>
+          </div>
+        </div>
+
+     
+      
+        <div class="toggle-btn">
+            <span id="toggle-label-monthly">Yearly</span>
+            <label class="switch">
+              <input type="checkbox" id="payment-toggle">
+              <span class="slider round"></span>
+            </label>
+            <span id="toggle-label-yearly">Monthly</span>
+          </div>
+
+        </div>
+          <div class="sticky-bottom">
+           <form  class="paln-button" id="plan-selection-form">
+            <input type="submit" class="go-back-btn" value="Go Back" style="color: black; background-color: white;">
+          <input type="submit" class="next-btn" value="Next Step" id="plan-price">
+        </form>
+      </div>
+     
+        </div>
+    <div class="detail-form" id="3-details">
+        <div class="pick-addons">
+          <div class="detail-form-style">
+            <h1>Pick Add-Ons</h1>
+            <p style="margin-bottom: 23px;">Add-ons help enhance your gaming experience.</p>
+            
+            <div class="addon-box" style="height: 50px;">
+              <input type="checkbox" id="addon1">
+              <div class="addon-details">
+                <h2>Online service</h2>
+                <p>Access to multiplayer games.</p>
+              </div>
+              <span class="addon-price" data-monthly="1" data-yearly="10"> </span>
+            </div>
+            
+            <div class="addon-box" style="height: 50px;">
+              <input type="checkbox" id="addon2">
+              <div class="addon-details">
+                <h2>Larger storage</h2>
+                <p>Extra 1TB of cloud save</p>
+              </div>
+              <span class="addon-price" data-monthly="2" data-yearly="20"></span>
+            </div>
+            
+            <div class="addon-box" style="height: 50px;">
+              <input type="checkbox" id="addon3">
+              <div class="addon-details">
+                <h2>Customizable Profile</h2>
+                <p>Custom theme on your profile</p>
+              </div>
+              <span class="addon-price" data-monthly="2" data-yearly="20"></span>
+            </div>
+          </div>
+        </div>
+        <div class="sticky-bottom">
+          <form  class="paln-button" id="addons-selection-form">
+            <input type="submit" id="go-back-btn" value="Go Back" style="color: black; background-color: white;">
+          <input type="submit" class="next-btn" value="Next Step" >
+          </form>
+        </div>
+    </div> 
+    <div class="detail-form" id="4-details" >
+      <div class="summary detail-form-style" style="max-height: calc(100vh - 60px); overflow-y: auto;">
+        <h1 style="margin-top: 0px;">Finishing up</h1>
+        <p >double-check everything befor confirming</p>
+        
+        <div class="addon-box" style="margin-bottom: 0; padding-top: 0; border-bottom: none; margin-top: 40px" >
+         
+          <div class="addon-details" >
+            <h2 class="selected-plan-name"></h2>
+            <p><a href="">change</a></p>
+          </div>
+          <span class="addon-price" id="pride"></span>
+         
+        </div>
+         
+          <hr style="margin: 0;  text-align: center; margin-left: 25px; width: auto; margin-right: 25px;">
+        
+         
+        
+        <div class="addon-box" style="padding-top: 20px; border-top: none;">
+          
+          
+          <div class="addon-details selected-addons">
+            
+          </div>
+          <div class="addon-details selected-addon-prices" style="text-align: end;">
+           <!-- <p display="block">+$10/yr</p>
+           <p>+$10/yr</p>
+           <p>+$10/yr</p> -->
+          </div>
+        </div>
+        
+        <div class="total">
+         
+          <div class="addon-details">
+             
+            <p>Total(per month)</p>
+          </div>
+          <span class="addon-price total-price">0</span>
+        </div>
+      </div>
+      <div class="sticky-bottom sticky">
+        <form class="paln-button" >
+            <input type="submit" class="go-back-btn" value="Go Back"  style="color: black; background-color: white;">
+            <input type="submit" class="next-btn" value="Confirm"  id="confirm" >
+        </form>
+    </div>
+      
+</div>
+<div class="detail-form" id="5-details" >
+  <div class="detail-form-style last">
+  <img src="./assets/images/icon-thank-you.svg" alt="" >
+    <div  >
+      Thank you!
+    </div>
+    <p >Thanks for conforming your subscription! we hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.  </p>
+</div>
+</div>
+
+    </div>
+
+   
+  
+    
+</div>
+
+</div>
+
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+ 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
